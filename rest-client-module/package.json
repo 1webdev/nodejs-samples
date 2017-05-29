@@ -1,0 +1,113 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "b2t-rest-client@git+ssh://git@github.com/michelslager/module-rest-client.git",
+        "scope": null,
+        "escapedName": "b2t-rest-client",
+        "name": "b2t-rest-client",
+        "rawSpec": "git+ssh://git@github.com/michelslager/module-rest-client.git",
+        "spec": "git+ssh://git@github.com/michelslager/module-rest-client.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:michelslager/module-rest-client.git",
+          "sshUrl": "git+ssh://git@github.com/michelslager/module-rest-client.git",
+          "httpsUrl": "git+https://github.com/michelslager/module-rest-client.git",
+          "gitUrl": "git://github.com/michelslager/module-rest-client.git",
+          "shortcut": "github:michelslager/module-rest-client",
+          "directUrl": "https://raw.githubusercontent.com/michelslager/module-rest-client/master/package.json"
+        }
+      },
+      "/var/www/b2t.hm/cron"
+    ]
+  ],
+  "_from": "git+ssh://git@github.com/michelslager/module-rest-client.git",
+  "_id": "b2t-rest-client@0.1.1",
+  "_inCache": true,
+  "_location": "/b2t-rest-client",
+  "_phantomChildren": {
+    "component-emitter": "1.2.1",
+    "cookiejar": "2.0.6",
+    "core-util-is": "1.0.2",
+    "debug": "2.6.3",
+    "extend": "3.0.0",
+    "form-data": "1.0.0-rc3",
+    "formidable": "1.0.17",
+    "inherits": "2.0.3",
+    "isarray": "0.0.1",
+    "methods": "1.1.2",
+    "mime": "1.3.4",
+    "qs": "2.3.3",
+    "reduce-component": "1.0.1",
+    "string_decoder": "0.10.31"
+  },
+  "_requested": {
+    "raw": "b2t-rest-client@git+ssh://git@github.com/michelslager/module-rest-client.git",
+    "scope": null,
+    "escapedName": "b2t-rest-client",
+    "name": "b2t-rest-client",
+    "rawSpec": "git+ssh://git@github.com/michelslager/module-rest-client.git",
+    "spec": "git+ssh://git@github.com/michelslager/module-rest-client.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:michelslager/module-rest-client.git",
+      "sshUrl": "git+ssh://git@github.com/michelslager/module-rest-client.git",
+      "httpsUrl": "git+https://github.com/michelslager/module-rest-client.git",
+      "gitUrl": "git://github.com/michelslager/module-rest-client.git",
+      "shortcut": "github:michelslager/module-rest-client",
+      "directUrl": "https://raw.githubusercontent.com/michelslager/module-rest-client/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+ssh://git@github.com/michelslager/module-rest-client.git#8e894e1bebc796fcd63d91c86e88a1e96f216e28",
+  "_shasum": "e187eb7fa2b39a0b80189ee1aa8ba4703e3f4afb",
+  "_shrinkwrap": null,
+  "_spec": "b2t-rest-client@git+ssh://git@github.com/michelslager/module-rest-client.git",
+  "_where": "/var/www/b2t.hm/cron",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/michelslager/module-rest-client/issues"
+  },
+  "dependencies": {
+    "b2t-common": "git+ssh://git@github.com/michelslager/module-common.git",
+    "babel-preset-es2015": "^6.5.0",
+    "bluebird": "^3.0.0",
+    "fast-json-patch": "^0.5.2",
+    "gulp": "^3.8.10",
+    "gulp-babel": "^6.1.2",
+    "gulp-istanbul": "^0.8.1",
+    "gulp-jshint": "^1.9.0",
+    "gulp-mocha": "^2.0.0",
+    "merge-stream": "^1.0.0",
+    "mocha": "^2.1.0",
+    "superagent": "^1.2.0",
+    "superagent-bluebird-promise": "^3.0.0"
+  },
+  "description": "A JS client for communicating with the rest api",
+  "devDependencies": {
+    "chalk": "^1.1.0",
+    "debug": "^2.2.0",
+    "should": "*",
+    "sinon": "^1.15.3"
+  },
+  "gitHead": "8e894e1bebc796fcd63d91c86e88a1e96f216e28",
+  "homepage": "https://github.com/michelslager/module-rest-client#readme",
+  "main": "es5/index.js",
+  "name": "b2t-rest-client",
+  "optionalDependencies": {},
+  "readme": "# B2T Rest-API Client\r\n\r\nA Javascript client for the rest-api.\r\n\r\n### Installation\r\n\r\nTo use this package in a project:\r\n\r\n```\r\nnpm install --save git+ssh://github.com:michelslager/module-rest-client.git\r\n```\r\n\r\n\r\n### Branches\r\n\r\n#### master\r\n\r\nMain branch, all changes and p.r.s are against master.\r\n\r\n\r\n#### Feature\r\n\r\nFeature branches are created off of master for changes, and then merged-in\r\nlater via pull request.\r\n\r\nex:\r\n\r\n- DYNQRA-300\r\n- DYNQRA-321-my-changes\r\n- feature/changes-without-ticket\r\n\r\n\r\n### Usage\r\n\r\n\r\n```javascript\r\nvar ApiClient = require('b2t-rest-client');\r\n\r\nvar client = new ApiClient('http://localhost:300');\r\n\r\n// Get some devices\r\nclient.devices\r\n      .limit(10)      // limit() and page() are optional,\r\n      .page(2)        // they'll default to the api's default\r\n      .spread(function(data, response) {\r\n          // data is the response data returned from the server,\r\n          // response is an object that represents the entire response\r\n\r\n          /* ... */\r\n      });\r\n\r\n// Get a particular play-list\r\nclient.playlists\r\n      .id('pls::5bb803ca-1704-4888-b7ca-ba2c29b9899f')\r\n      .spread(function(data) {\r\n          /* ... */\r\n      });\r\n\r\n\r\n// Authenticate\r\nclient\r\n    .authenticate({ username:'brandNewUser', password:'test' })\r\n    .then(function() {\r\n        // After authenticating the client saves the access token and\r\n        // automatically sends it in future responses.\r\n\r\n        client.devices\r\n              .post()\r\n              .send({ /* data for a new device */ )\r\n              .then(function(resArray) {\r\n                  // resArray[0] is the same as the data argument above\r\n                  // resArray[1] is the same as the response argument above\r\n\r\n                  /* ... */\r\n              });\r\n    })\r\n    .catch(function(err) {\r\n        // ...\r\n    });\r\n```\r\n\r\n\r\n### ApiClient\r\n\r\n#### Properties\r\n\r\n**baseUrl**: Set during construction, a base url that points towards the\r\nrest-api itself. ex: `http://test.com`\r\n\r\n**auth**: An object that contains the authorization information. It is\r\nautomatically set as part of a successful call to `ApiClient.authenticate()`. It\r\ncan also be set manually. Properties:\r\n* `token`: The auth token\r\n* `user`: User object for the authenticated user\r\n* `profile`: Profile object for the authenticated user\r\n\r\n**options**: An object with misc. properties. Properties:\r\n* `project`: A projectId to be automatically included on requests.\r\n\r\n\r\n#### Endpoint Properties\r\n\r\nEndpoint properties are calculated on the fly and return a new `ApiRequest` for\r\ncommunicating with a specific endpoint. A couple of properties are given for\r\neach endpoint, to help create clearer code\r\n\r\n* **Accounts** : `.accounts`, `.account`, `.acn`\r\n* **Activities** : `.activities`, `.activity`, `.act`, `.acts`\r\n* **Categories** : `.categories`, `.category`, `.cat`, `.cats`\r\n* **Channels** : `.channels`, `.channel`, `.cha`\r\n* **Devices** : `.devices`, `.device`, `.dev`\r\n* **Events** : `.events`, `.event`, `.evt`\r\n* **Exercises** : `.exercises`, `.exercise`, `.exc`\r\n* **Courses** : `.courses`, `.course`, `.crs`\r\n* **Licenses** : `.licenses`, `.license`, `.lcs`\r\n* **Media** : `.media`, `.med`\r\n* **News** : `.news`, `.nws`\r\n* **Playlists** : `.playlists`, `.playlist`, `.pls`\r\n* **Projects** : `.projects`, `.project`, `.prj`\r\n* **Roles** : `.roles`, `.role`, `.rle`\r\n* **Tenants** : `.tenants`, `.tenant`, `.tnt`\r\n* **Training-Plans** : `.trainingPlans`, `.trainingPlan`, `.tpl`\r\n* **Users** : `.users`, `.user`, `.usr`\r\n\r\n\r\n* **Auth** : `.authorization`, `.authEndpoint`\r\n* **Conversations** : `.conversation`, `.convo`, `.convos`, `.conversations`\r\n* **Info** : `.info`\r\n* **Now** : `.now`\r\n* **Pois** : `.poi`, `.pois`, `.place`, `.places`\r\n* **Profiles** : `.profiles`, `.profiles`, `.prf`\r\n\r\n\r\n#### Methods\r\n\r\n##### *`Constructor`*(url[, options])\r\n\r\nTakes a base url for the api, and gives a new instance of the client.\r\n\r\n```\r\nvar ApiClient = require('b2t-rest-client'),\r\n    url = 'http://test.com';\r\n\r\nvar client = new ApiClient(url);\r\n```\r\n\r\n\r\n##### *`setProject`*(projectId)\r\n\r\nSet a project id to be used for subsequent requests.\r\n\r\n```\r\nclient.project('prj::1');\r\n```\r\n\r\n\r\n##### *`authenticate`*(credentials)\r\n\r\nAuthenticate with the rest-api.\r\n\r\n```\r\nvar credentials = {\r\n    username:'brandNewUser',\r\n    password:'test'\r\n};\r\n\r\nclient.authenticate(credentials)\r\n      .then(function() { /* successfully authentiacted now, yay! */ })\r\n      .catch(function(err) { /* :( */ });\r\n```\r\n\r\n\r\n#### *`newRequest`*(url[, options])\r\n\r\nCreates a new `ApiRequest` and returns it.\r\n\r\n```\r\nvar apiRequest = client.newRequest(url);\r\n```\r\n\r\n\r\n### ApiRequest\r\n\r\n#### Properties\r\n\r\n**url**: The base url of the request\r\n\r\n**options**\r\n\r\n**ids**: An array of the ids that will be used as part of the url.\r\n\r\n**lastVerb**: The last HTTP verb that was set for the request.\r\n\r\n**request**: The actual Superagent request object.\r\n\r\n**postfix**: A postfix that will be added to the url. Usually used for extra api\r\nmethods. ex: `url + '/unread'`\r\n\r\n\r\n#### Methods\r\n\r\n##### *`Constructor`* (url[, options])\r\n\r\nTakes a url for the api endpoint, and gives a new request instance.\r\n\r\n```\r\nvar ApiRequest = require('b2t-rest-client/src/request'),\r\n    url = 'http://test.com/profiles';\r\n\r\nvar request = new ApiRequest(url);\r\n```\r\n\r\n\r\n##### *`get`*()\r\n##### *`put`*()\r\n##### *`post`*()\r\n##### *`patch`*()\r\n##### *`delete`*()\r\n\r\nSet the HTTP verb that will be used for the requestr. `GET` is default.\r\n\r\n```\r\nrestClient\r\n    .profiles\r\n    .post()\r\n    .send(data)\r\n    .then(/* ... */);\r\n```\r\n\r\n\r\n##### *`query`*()\r\n\r\nAdd query parameters to the request, passes arguments to the superagent request.\r\n\r\n```\r\nrestClient\r\n    .news\r\n    .query({ category:categoryId })\r\n    .then(/* ... */);\r\n```\r\n\r\n\r\n##### *`exec`*()\r\n\r\nExecute the request, returning back a thenable.\r\n\r\n\r\n##### *`then`*()\r\n\r\nExecute the request, and return the result to a callback.\r\n\r\n```\r\nrestClient\r\n    .news\r\n    .then(function(resultArray) {\r\n        resultArray[0] // => response data\r\n        resultArray[1] // => response\r\n    });\r\n```\r\n\r\n\r\n##### *`spread`*()\r\n\r\nExecute the request, and return the results to a callback\r\n\r\n```\r\nrestClient\r\n    .news\r\n    .spread(function(data, response) {/* ... */});\r\n```\r\n\r\n\r\n##### *`promise`*()\r\n\r\nReturns back a promise object for the request\r\n\r\n```\r\nvar requestPromise = restClient\r\n    .news\r\n    .promise();\r\n```\r\n\r\n\r\n##### *`send`*(data)\r\n\r\nGive data to send with the request\r\n\r\n```\r\nrestClient\r\n    .media\r\n    .post()\r\n    .send({\r\n        cloudinary_id: '...',\r\n        width: 150,\r\n        height: 350\r\n    })\r\n    .then(/* ... */);\r\n```\r\n\r\n\r\n##### *`sendPatch`*(newValue, oldValu)\r\n\r\nCreate a JSON-patch for two objects and set it as the send data.\r\n\r\n```\r\nrestClient\r\n    .media\r\n    .patch()\r\n    .id(mediaId)\r\n    .sendPatch(updatedMediaObject, oldMediaObject)\r\n    .then(/* ... */);\r\n```\r\n\r\nEXAMPLE (updatedMediaObject must be different from oldMediaObject):\r\n\r\n```\r\n#!javascript\r\n\r\nrestClient.instance().devices\r\n        .patch()\r\n        .id(_id)\r\n        .sendPatch({\"device_name\": device_name}, {\"device_name\": 'gmghm-bezveze'})\r\n        .then(function (data) {\r\n\r\n          def.resolve(data[1].xhr.responseURL);\r\n          console.log('dataX: ' + JSON.stringify(data));\r\n\r\n        }).catch(function (err) {\r\n\r\n          def.reject('modDevNameERR: ' + err);\r\n          console.log('modDevNameERR: ' + err);\r\n\r\n        });\r\n```\r\n\r\n\r\n\r\n\r\n\r\n\r\n##### *`id`*(id[, index])\r\n\r\nSet ids for use in the request.\r\n\r\n```\r\n// GET: /api/conversation/{profileId}/{messageId}\r\nrestClient\r\n    .conversation\r\n    .id(profileId)      // Set the first id, index 0\r\n    .id(messageId, 1)   // Set the next id, index 1\r\n    .then(/* ... */);\r\n```\r\n\r\n\r\n##### *`method`*(postfix)\r\n\r\nSet a postfix. Aliases `.base`, `.method`, `.action`, `.setPostfix`.\r\n\r\n```\r\n// GET: /api/conversation/{profileId}/unread\r\nrestClient\r\n    .conversation\r\n    .method('unread')\r\n    .id(profileId)      // Set the first id, index 0\r\n    .then(/* ... */);\r\n```\r\n\r\n\r\n##### *`set`*(header, value)\r\n\r\nSet a header value.\r\n\r\n```\r\nrestClient\r\n    .users\r\n    .set('x-access-token','...'); // Set automatically when using an authenticated client\r\n```\r\n\r\n\r\n##### *`authenticate`*(token)\r\n\r\nSets the `x-access-token` header.\r\n\r\n```\r\nrestClient\r\n    .users\r\n    .authenticate('...'); // Set automatically when using an authenticated client\r\n```\r\n\r\n\r\n##### *`media`*([field])\r\n\r\nSets the postfix to be used for a media request.\r\n\r\n```\r\n// GET: /api/profile/{profileId}/media\r\nrestClient\r\n    .profile\r\n    .media()\r\n    .id(profileId);\r\n\r\n// GET: /api/profile/{profileId}/media/header\r\nrestClient\r\n    .profile\r\n    .media('header')\r\n    .id(profileId);\r\n```\r\n\r\n\r\n##### *`searchQuery`*()\r\n\r\nSet the postfix to get a query endpoint.\r\n\r\n```\r\n// GET: /api/profiles/query\r\nrestClient\r\n    .profiles\r\n    .query();\r\n```\r\n\r\n\r\n##### *`envelope`*()\r\n\r\nGet an enveloped response instead of the regular type\r\n\r\n```\r\nrestClient\r\n    .profiles\r\n    .enevelope();\r\n```\r\n\r\n\r\n##### *`page`*(num)\r\n\r\nSet the page number for the request\r\n\r\n\r\n##### *`limit`*(num)\r\n\r\nSet the result limit for the request\r\n\r\n\r\n##### *`includes`*(includes)\r\n\r\nFields to include the full values of for the request\r\n\r\n```\r\nrestClient\r\n    .profiles\r\n    .include('user') // Valid values are a string,\r\n                     // a comma-delimited string: 'user,owner'\r\n                     // or an array: ['user','owner']\r\n```\r\n\r\n\r\n##### *`includeFlags`*()\r\n\r\nTo include optional flags with the response body\r\n\r\n\r\n##### *`project`*(projectId)\r\n\r\nTo set a project id to limit the response objects to. This is automatically set\r\nwhen a project is set on the `ApiClient`\r\n\r\n\r\n##### *`search`*(search)\r\n\r\nSearch request.\r\n\r\n\r\n##### *`location`*(location)\r\n\r\nSearch via a latitude and longitude.\r\n\r\n\r\n##### *`distance`*(number)\r\n\r\nThe geographical search distance in km.\r\n\r\n\r\n##### *`sort`*(sortValue)\r\n\r\nField(s) to sort by.\r\n\r\n\r\n##### *`select`*(fields)\r\n\r\nSelect which field(s) to return in the response\r\n\r\n\r\n##### *`detach`*()\r\n\r\nDetach included fields to a separate object\r\n\r\n\r\n##### *`count`*()\r\n\r\nReturn a count of the number of results returns\r\n\r\n```\r\nrestClient\r\n    .profiles\r\n    .search('cool')\r\n    .count()\r\n    .then(function(count) {\r\n        console.log('number of cool cats: %s', count);\r\n    });\r\n```\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/michelslager/module-rest-client.git"
+  },
+  "scripts": {
+    "postinstall": "gulp build",
+    "test": "node ./node_modules/gulp/bin/gulp.js tr-test"
+  },
+  "version": "0.1.1"
+}
