@@ -1,13 +1,7 @@
-# B2T Rest-API Client
+#Rest-API Client
 
 A Javascript client for the rest-api.
 
-### Installation
-
-To use this package in a project:
-
-```
-npm install --save git+ssh://github.com:michelslager/module-rest-client.git
 ```
 
 
@@ -23,18 +17,12 @@ Main branch, all changes and p.r.s are against master.
 Feature branches are created off of master for changes, and then merged-in
 later via pull request.
 
-ex:
-
-- DYNQRA-300
-- DYNQRA-321-my-changes
-- feature/changes-without-ticket
-
 
 ### Usage
 
 
 ```javascript
-var ApiClient = require('b2t-rest-client');
+var ApiClient = require('rest-client');
 
 var client = new ApiClient('http://localhost:300');
 
@@ -138,7 +126,7 @@ each endpoint, to help create clearer code
 Takes a base url for the api, and gives a new instance of the client.
 
 ```
-var ApiClient = require('b2t-rest-client'),
+var ApiClient = require('rest-client'),
     url = 'http://test.com';
 
 var client = new ApiClient(url);
@@ -204,7 +192,7 @@ methods. ex: `url + '/unread'`
 Takes a url for the api endpoint, and gives a new request instance.
 
 ```
-var ApiRequest = require('b2t-rest-client/src/request'),
+var ApiRequest = require('rest-client/src/request'),
     url = 'http://test.com/profiles';
 
 var request = new ApiRequest(url);
